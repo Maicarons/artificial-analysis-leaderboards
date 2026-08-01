@@ -73,6 +73,63 @@ SOURCES = [
     },
 ]
 
+# Endpoints whose public arena API now requires a logged-in user key.
+# When fetching them fails (e.g. HTTP 400 "User key is required"), we fall
+# back to the most recent historical snapshot that still had data instead of
+# failing the whole run.
+GATED_MEDIA_SLUGS: frozenset[str] = frozenset(
+    {"text-to-image", "image-editing", "text-to-speech"}
+)
+
+GATED_NOTE: str = (
+    "AA arena API now requires a logged-in user key; "
+    "using last known public snapshot"
+)
+
+DATE_DIR_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+
+def find_last_known_snapshot(
+    repo_root: Path, slug: str, today: str
+) -> tuple[Path | None, dict[str, Any] | None]:
+    """Scan historical ``data/<date>/<slug>.json`` snapshots (newest first) and
+    return the most recent one whose ``models`` array is non-empty.
+
+    Args:
+        repo_root: Repository root that contains the ``data`` directory.
+        slug: Endpoint slug to look up.
+        today: ISO date string (``YYYY-MM-DD``) to skip — only history is used.
+
+    Returns:
+        A tuple ``(path, content)`` for the most recent usable snapshot, or
+        ``(None, None)`` when no suitable snapshot exists.
+    """
+    data_root = repo_root / "data"
+    if not data_root.is_dir():
+        return None, None
+
+    date_names: list[str] = [
+        entry.name
+        for entry in data_root.iterdir()
+        if entry.is_dir() and DATE_DIR_RE.match(entry.name) and entry.name != today
+    ]
+    date_names.sort(reverse=True)
+
+    for date_name in date_names:
+        candidate = data_root / date_name / f"{slug}.json"
+        if not candidate.is_file():
+            continue
+        try:
+            with open(candidate, encoding="utf-8") as f:
+                content = json.load(f)
+        except (json.JSONDecodeError, OSError):
+            continue
+        models = content.get("models")
+        if isinstance(models, list) and len(models) > 0:
+            return candidate, content
+
+    return None, None
+
 
 def http_get(url: str, accept: str = "application/json") -> bytes:
     req = urllib.request.Request(
@@ -377,6 +434,8 @@ def main() -> None:
         }
 
     success_count = 0
+    gated_count = 0
+    critical_failed = False
     total = len(sources)
 
     for i, source in enumerate(sources, start=1):
@@ -402,12 +461,49 @@ def main() -> None:
             success_count += 1
             print(f"✓ {len(models)} models")
         except Exception as e:
+            if slug in GATED_MEDIA_SLUGS:
+                snapshot_path, snapshot_content = find_last_known_snapshot(
+                    repo_root, slug, date_str
+                )
+                if snapshot_path is not None and snapshot_content is not None:
+                    original_date = snapshot_path.parent.name
+                    meta = dict(snapshot_content.get("meta", {}))
+                    meta["gated"] = True
+                    meta["source"] = "last_known_snapshot"
+                    meta["original_date"] = original_date
+                    meta["note"] = GATED_NOTE
+                    meta["fetched_at"] = fetched_at
+                    snapshot_content["meta"] = meta
+
+                    out_path = day_dir / f"{slug}.json"
+                    with open(out_path, "w", encoding="utf-8") as f:
+                        json.dump(snapshot_content, f, indent=2, ensure_ascii=False)
+
+                    index["endpoints"][slug] = {
+                        "model_count": len(snapshot_content.get("models", [])),
+                        "source_type": source["source_type"],
+                        "source_url": source["source_url"],
+                        "gated": True,
+                        "note": GATED_NOTE,
+                    }
+                    success_count += 1
+                    gated_count += 1
+                    print(
+                        f"↑ {len(snapshot_content.get('models', []))} models "
+                        f"(gated → last snapshot {original_date})"
+                    )
+                    if i < total:
+                        time.sleep(args.delay)
+                    continue
+            # Non-gated failure, or gated slug with no usable fallback.
             print(f"✗ {e}", file=sys.stderr)
             index["endpoints"][slug] = {
                 "error": str(e),
                 "source_type": source["source_type"],
                 "source_url": source["source_url"],
             }
+            if slug == "llms":
+                critical_failed = True
 
         if i < total:
             time.sleep(args.delay)
@@ -419,8 +515,16 @@ def main() -> None:
     with open(latest_path, "w", encoding="utf-8") as f:
         json.dump({"date": date_str, "path": f"data/{date_str}"}, f, indent=2)
 
-    print(f"\nDone: {success_count}/{total} endpoints, saved to data/{date_str}/")
-    if success_count < total:
+    print(
+        f"\nDone: {success_count}/{total} endpoints, "
+        f"{gated_count} gated (fallback), saved to data/{date_str}/"
+    )
+
+    # Only a failure of the critical `llms` endpoint is fatal. Media endpoints
+    # that are gated behind a login key degrade gracefully (fall back to a
+    # historical snapshot) and must not produce a non-zero exit code.
+    if critical_failed:
+        print("CRITICAL: `llms` fetch failed — exiting non-zero", file=sys.stderr)
         sys.exit(1)
 
 
