@@ -5,12 +5,20 @@ Saves daily snapshots + latest.json pointer.
 
 Sources:
   - /leaderboards/models                                → LLM leaderboard page payload
-  - /api/text-to-image/arena/preferences                → Text-to-image / image editing
-  - /api/text-to-speech/arena/preferences               → Text-to-speech
-  - /api/text-to-video/arena/preferences                → Text-to-video / image-to-video
+  - /api/v2/data/media/<slug>  (key required)           → Live media boards when AA_API_KEY is set
+  - /api/text-to-image/arena/preferences                → Text-to-image / image editing (legacy, gated)
+  - /api/text-to-speech/arena/preferences               → Text-to-speech (legacy, gated)
+  - /api/text-to-video/arena/preferences                → Text-to-video / image-to-video (legacy, gated)
+
+When AA_API_KEY is provided (env or --api-key), the 5 media boards are fetched
+live from the official v2 API. Otherwise the script falls back to the legacy
+public endpoints, and — if those are gated — to the most recent historical
+snapshot. The LLM board is always fetched from the page payload.
 
 Usage:
   python3 scripts/fetch_leaderboards.py
+  python3 scripts/fetch_leaderboards.py --api-key <AA_API_KEY>
+  AA_API_KEY=... python3 scripts/fetch_leaderboards.py
   python3 scripts/fetch_leaderboards.py --only llms text-to-video
 """
 
@@ -18,6 +26,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import os
 import re
 import sys
 import time
@@ -87,6 +96,18 @@ GATED_NOTE: str = (
 )
 
 DATE_DIR_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
+
+# Official Artificial Analysis v2 API. When AA_API_KEY is available we fetch
+# live media board data from here; the legacy public arena endpoints are now
+# gated behind a login key. The key is ONLY ever read from the environment or
+# the --api-key CLI flag — it is never written to disk.
+AA_V2_BASE: str = "https://artificialanalysis.ai/api/v2/data"
+AA_API_KEY: str = os.environ.get("AA_API_KEY", "")
+
+# Every non-LLM (media) endpoint can be served by the v2 API.
+MEDIA_SLUGS: frozenset[str] = frozenset(
+    {s["slug"] for s in SOURCES if s["slug"] != "llms"}
+)
 
 
 def find_last_known_snapshot(
@@ -371,7 +392,98 @@ def normalize_llm(raw: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-def fetch_source(source: dict[str, str]) -> tuple[list[dict[str, Any]], dict[str, Any]]:
+def _parse_ci95_delta(ci95: Any) -> float | None:
+    """Convert a v2 ci95 string such as ``"-7/7"`` into a numeric half-width delta.
+
+    Returns ``None`` when the value is missing or cannot be parsed.
+    """
+    if not isinstance(ci95, str):
+        return None
+    parts = ci95.split("/")
+    if len(parts) != 2:
+        return None
+    try:
+        lo = float(parts[0])
+        hi = float(parts[1])
+    except ValueError:
+        return None
+    return (abs(lo) + abs(hi)) / 2.0
+
+
+def _legacy_media_from_v2(item: dict[str, Any]) -> dict[str, Any]:
+    """Map a single v2 media item onto the legacy media model shape.
+
+    The mapping is crafted so the UNCHANGED ``normalize_media`` keeps the live
+    ELO / rank / CI95 / appearances:
+      - ``overallRank`` carries the v2 rank (normalize_media reads rank from it).
+      - ``overallElo`` carries elo / appearances / ciDelta (normalize_media reads
+        those via ``pick_primary_elo``).
+    Top-level fields are retained for fidelity with the documented legacy shape;
+    ``elos`` is intentionally left empty (per the legacy contract).
+    """
+    creator = item.get("model_creator") or {}
+    elo = item.get("elo")
+    rank = item.get("rank")
+    appearances = item.get("appearances")
+    ci95_raw = item.get("ci95")
+    return {
+        "id": item.get("id"),
+        "name": item.get("name"),
+        "slug": item.get("slug"),
+        "release_date": item.get("release_date"),
+        "creator": {
+            "id": creator.get("id", ""),
+            "name": creator.get("name", ""),
+        },
+        "elo": elo,
+        "rank": rank,
+        "overallRank": rank,
+        "ci95": ci95_raw,
+        "appearances": appearances,
+        "family": None,
+        "wins": None,
+        "win_rate": None,
+        "pricing": None,
+        "elos": [],
+        "overallElo": {
+            "elo": elo,
+            "appearances": appearances,
+            "ciDelta": _parse_ci95_delta(ci95_raw),
+            "wins": None,
+            "winRate": None,
+        },
+        "open_weights_url": None,
+        "is_current": None,
+        "is_scraped": None,
+        "introduced_at": None,
+        "note": None,
+    }
+
+
+def fetch_media_v2(slug: str, api_key: str) -> list[dict[str, Any]]:
+    """Fetch a media board from the official AA v2 API (requires ``x-api-key``).
+
+    Returns a list of legacy-shaped media model dicts ready for ``normalize_media``.
+    """
+    url = f"{AA_V2_BASE}/media/{slug}"
+    req = urllib.request.Request(
+        url,
+        headers={
+            "Accept": "application/json",
+            "x-api-key": api_key,
+            "User-Agent": USER_AGENT,
+        },
+    )
+    with urllib.request.urlopen(req, timeout=60) as resp:
+        payload = json.loads(resp.read().decode("utf-8"))
+
+    data = payload.get("data") if isinstance(payload, dict) else None
+    if not isinstance(data, list):
+        return []
+    return [_legacy_media_from_v2(item) for item in data]
+
+
+def fetch_source(source: dict[str, str], api_key: str = "") -> tuple[list[dict[str, Any]], dict[str, Any]]:
     slug = source["slug"]
     source_url = source["source_url"]
 
@@ -379,19 +491,42 @@ def fetch_source(source: dict[str, str]) -> tuple[list[dict[str, Any]], dict[str
         html = fetch_text(source_url)
         raw_models = extract_llm_models_from_page(html)
         models = [normalize_llm(model) for model in raw_models]
+        source_type = source["source_type"]
+        source_ref = source_url
+        used_v2 = False
     else:
-        payload = fetch_json(source_url)
-        raw_models = payload.get("models", [])
+        used_v2 = bool(api_key) and slug in MEDIA_SLUGS
+        try:
+            if used_v2:
+                raw_models = fetch_media_v2(slug, api_key)
+            else:
+                payload = fetch_json(source_url)
+                raw_models = payload.get("models", [])
+        except Exception:
+            if used_v2:
+                # v2 failed → gracefully fall back to the legacy public endpoint
+                # (which may itself fail and then trigger the gated-snapshot
+                # fallback in main()'s exception handler).
+                payload = fetch_json(source_url)
+                raw_models = payload.get("models", [])
+                used_v2 = False
+            else:
+                raise
         models = [normalize_media(model, slug, default_rank=i) for i, model in enumerate(raw_models, start=1)]
+        source_type = "aa_v2_api" if used_v2 else source["source_type"]
+        source_ref = f"{AA_V2_BASE}/media/{slug}" if used_v2 else source_url
 
     meta = {
         "endpoint": slug,
-        "source_type": source["source_type"],
-        "source_url": source_url,
+        "source_type": source_type,
+        "source_url": source_ref,
         "source_description": source["description"],
         "parser_version": PARSER_VERSION,
         "model_count": len(models),
     }
+    if used_v2:
+        meta["source"] = AA_V2_BASE
+        meta["gated"] = False
     return models, meta
 
 
@@ -399,7 +534,11 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Fetch Artificial Analysis leaderboards")
     parser.add_argument("--only", nargs="*", help="Only fetch these endpoint slugs")
     parser.add_argument("--delay", type=float, default=2.0, help="Delay between requests in seconds")
+    parser.add_argument("--api-key", default=None, help="AA v2 API key (overrides the AA_API_KEY env var)")
     args = parser.parse_args()
+
+    # Prefer an explicit --api-key flag, otherwise fall back to the env var.
+    api_key = args.api_key or AA_API_KEY
 
     sources = SOURCES
     if args.only:
@@ -442,7 +581,7 @@ def main() -> None:
         slug = source["slug"]
         print(f"Fetching {slug}...", end=" ", flush=True)
         try:
-            models, meta = fetch_source(source)
+            models, meta = fetch_source(source, api_key)
             meta["fetched_at"] = fetched_at
             output = {
                 "meta": meta,
@@ -455,9 +594,11 @@ def main() -> None:
 
             index["endpoints"][slug] = {
                 "model_count": len(models),
-                "source_type": source["source_type"],
-                "source_url": source["source_url"],
+                "source_type": meta["source_type"],
+                "source_url": meta["source_url"],
             }
+            if "gated" in meta:
+                index["endpoints"][slug]["gated"] = meta["gated"]
             success_count += 1
             print(f"✓ {len(models)} models")
         except Exception as e:

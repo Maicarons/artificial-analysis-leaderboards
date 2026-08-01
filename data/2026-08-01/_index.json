@@ -1,6 +1,6 @@
 {
   "date": "2026-08-01",
-  "fetched_at": "2026-08-01T11:24:31.015052+00:00",
+  "fetched_at": "2026-08-01T12:27:32.927865+00:00",
   "source": "https://artificialanalysis.ai",
   "source_type": "public_web_surfaces",
   "parser_version": "public-web-v1",
@@ -11,35 +11,34 @@
       "source_url": "https://artificialanalysis.ai/leaderboards/models"
     },
     "text-to-image": {
-      "model_count": 151,
-      "source_type": "public_json",
-      "source_url": "https://artificialanalysis.ai/api/text-to-image/arena/preferences?supports_image_input=false",
-      "gated": true,
-      "note": "AA arena API now requires a logged-in user key; using last known public snapshot"
+      "model_count": 150,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-image",
+      "gated": false
     },
     "image-editing": {
-      "model_count": 70,
-      "source_type": "public_json",
-      "source_url": "https://artificialanalysis.ai/api/text-to-image/arena/preferences?supports_image_input=true",
-      "gated": true,
-      "note": "AA arena API now requires a logged-in user key; using last known public snapshot"
+      "model_count": 67,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/image-editing",
+      "gated": false
     },
     "text-to-speech": {
-      "model_count": 89,
-      "source_type": "public_json",
-      "source_url": "https://artificialanalysis.ai/api/text-to-speech/arena/preferences",
-      "gated": true,
-      "note": "AA arena API now requires a logged-in user key; using last known public snapshot"
+      "model_count": 92,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-speech",
+      "gated": false
     },
     "text-to-video": {
-      "model_count": 0,
-      "source_type": "public_json",
-      "source_url": "https://artificialanalysis.ai/api/text-to-video/arena/preferences?supports-image-input=false"
+      "model_count": 88,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-video",
+      "gated": false
     },
     "image-to-video": {
-      "model_count": 0,
-      "source_type": "public_json",
-      "source_url": "https://artificialanalysis.ai/api/text-to-video/arena/preferences?supports-image-input=true"
+      "model_count": 83,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/image-to-video",
+      "gated": false
     }
   }
 }
