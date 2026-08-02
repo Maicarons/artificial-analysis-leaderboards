@@ -1,6 +1,6 @@
 # Artificial Analysis Leaderboards
 
-[![Daily Fetch](https://github.com/oolong-tea-2026/artificial-analysis-leaderboards/actions/workflows/fetch.yml/badge.svg)](https://github.com/oolong-tea-2026/artificial-analysis-leaderboards/actions/workflows/fetch.yml)
+[![Fetch Leaderboards](https://github.com/Maicarons/artificial-analysis-leaderboards/actions/workflows/fetch.yml/badge.svg)](https://github.com/Maicarons/artificial-analysis-leaderboards/actions/workflows/fetch.yml)
 
 Daily snapshots of [Artificial Analysis](https://artificialanalysis.ai) leaderboard data collected from public web surfaces.
 
