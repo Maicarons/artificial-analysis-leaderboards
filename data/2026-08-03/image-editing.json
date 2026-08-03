@@ -8,7 +8,7 @@
     "model_count": 67,
     "source": "last_known_snapshot",
     "gated": true,
-    "fetched_at": "2026-08-03T03:59:13.984241+00:00",
+    "fetched_at": "2026-08-03T08:41:07.438523+00:00",
     "original_date": "2026-08-02",
     "note": "AA arena API now requires a logged-in user key; using last known public snapshot"
   },
