@@ -1,0 +1,12 @@
+{
+  "meta": {
+    "endpoint": "image-to-video",
+    "source_type": "public_json",
+    "source_url": "https://artificialanalysis.ai/api/text-to-video/arena/preferences?supports-image-input=true",
+    "source_description": "Image-to-video leaderboard via text-to-video public arena endpoint",
+    "parser_version": "public-web-v1",
+    "model_count": 0,
+    "fetched_at": "2026-08-12T06:39:09.013815+00:00"
+  },
+  "models": []
+}
