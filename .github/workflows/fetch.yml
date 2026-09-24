@@ -19,9 +19,12 @@ jobs:
           python-version: '3.12'
 
       - name: Fetch leaderboards
+        env:
+          AA_API_KEY: ${{ secrets.AA_API_KEY }}
         run: python3 scripts/fetch_leaderboards.py
 
       - name: Commit & push
+        if: ${{ success() || failure() }}
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

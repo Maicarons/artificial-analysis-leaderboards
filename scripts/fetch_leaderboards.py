@@ -82,17 +82,16 @@ SOURCES = [
     },
 ]
 
-# Endpoints whose public arena API now requires a logged-in user key.
-# When fetching them fails (e.g. HTTP 400 "User key is required"), we fall
-# back to the most recent historical snapshot that still had data instead of
-# failing the whole run.
-GATED_MEDIA_SLUGS: frozenset[str] = frozenset(
-    {"text-to-image", "image-editing", "text-to-speech"}
-)
-
+# Public arena endpoints are gated and the v2 API needs AA_API_KEY. When a
+# live fetch fails or returns an empty board, fall back to the most recent
+# historical snapshot that still had data instead of failing the whole run.
 GATED_NOTE: str = (
     "AA arena API now requires a logged-in user key; "
     "using last known public snapshot"
+)
+
+LLM_FALLBACK_NOTE: str = (
+    "Live LLM page payload unavailable; using last known snapshot"
 )
 
 DATE_DIR_RE = re.compile(r"^\d{4}-\d{2}-\d{2}$")
@@ -190,40 +189,103 @@ def format_ci95(ci_delta: Any) -> str | None:
     return f"-{ci_delta}/+{ci_delta}"
 
 
-def iter_nested(obj: Any) -> Iterable[Any]:
-    yield obj
-    if isinstance(obj, dict):
-        for value in obj.values():
-            yield from iter_nested(value)
-    elif isinstance(obj, list):
-        for value in obj:
-            yield from iter_nested(value)
-
-
-def extract_llm_models_from_page(html: str) -> list[dict[str, Any]]:
-    pattern = re.compile(r'self\.__next_f\.push\(\[1,("(?:\\.|[^"\\])*")\]\)</script>')
-
-    for match in pattern.finditer(html):
-        decoded = json.loads(match.group(1))
-        if '"models":' not in decoded or ':' not in decoded:
+def _extract_json_array(text: str, start: int) -> list[Any]:
+    """Decode a JSON array whose opening ``[`` sits at ``start``."""
+    if start >= len(text) or text[start] != "[":
+        raise ValueError("array start must point at '['")
+    depth = 0
+    in_str = False
+    esc = False
+    for i in range(start, len(text)):
+        ch = text[i]
+        if in_str:
+            if esc:
+                esc = False
+            elif ch == "\\":
+                esc = True
+            elif ch == '"':
+                in_str = False
             continue
+        if ch == '"':
+            in_str = True
+        elif ch == "[":
+            depth += 1
+        elif ch == "]":
+            depth -= 1
+            if depth == 0:
+                return json.loads(text[start : i + 1])
+    raise ValueError("unbalanced JSON array")
 
-        payload = decoded.split(':', 1)[1]
+
+def _iter_next_f_payloads(html: str) -> Iterable[str]:
+    pattern = re.compile(r'self\.__next_f\.push\(\[1,("(?:\\.|[^"\\])*")\]\)</script>')
+    for match in pattern.finditer(html):
         try:
-            obj = json.loads(payload)
+            yield json.loads(match.group(1))
         except json.JSONDecodeError:
             continue
 
-        for node in iter_nested(obj):
-            if not isinstance(node, dict):
-                continue
-            models = node.get("models")
-            if not isinstance(models, list) or not models:
-                continue
-            if isinstance(models[0], dict) and "modelCreatorId" in models[0]:
-                return clean_value(models)
 
-    raise RuntimeError("Could not locate detailed llm models payload in page HTML")
+def _find_models_arrays(decoded: str) -> list[list[dict[str, Any]]]:
+    key = '"models":['
+    arrays: list[list[dict[str, Any]]] = []
+    start = 0
+    while True:
+        idx = decoded.find(key, start)
+        if idx == -1:
+            break
+        try:
+            arr = _extract_json_array(decoded, idx + len('"models":'))
+        except (ValueError, json.JSONDecodeError):
+            arr = None
+        if isinstance(arr, list) and arr and isinstance(arr[0], dict):
+            arrays.append(arr)
+        start = idx + len(key)
+    return arrays
+
+
+def extract_llm_models_from_page(html: str) -> list[dict[str, Any]]:
+    """Pull the detailed LLM board out of the Next.js RSC flight payload.
+
+    Current artificialanalysis.ai pages embed two ``models`` arrays:
+      - a summary list (slug / name / releaseDate / creator.id)
+      - a detailed metrics list (intelligenceIndex, prices, speeds, …)
+    Older snapshots used a single array with ``modelCreatorId``. Both shapes
+    are accepted; the detailed list is authoritative and gets joined with
+    the summary list (by slug) for ids and release dates.
+    """
+    detailed: list[dict[str, Any]] | None = None
+    summary: list[dict[str, Any]] | None = None
+
+    for decoded in _iter_next_f_payloads(html):
+        if '"models":[' not in decoded:
+            continue
+        for arr in _find_models_arrays(decoded):
+            first = arr[0]
+            if (
+                "intelligenceIndex" in first
+                or "modelCreatorName" in first
+                or "modelCreatorId" in first
+                or "shortName" in first
+            ):
+                detailed = arr
+            elif "releaseDate" in first or "creator" in first:
+                summary = arr
+
+    if not detailed:
+        raise RuntimeError("Could not locate detailed llm models payload in page HTML")
+
+    if summary:
+        by_slug = {m.get("slug"): m for m in summary if isinstance(m, dict)}
+        merged: list[dict[str, Any]] = []
+        for item in detailed:
+            base = by_slug.get(item.get("slug")) or {}
+            combined = dict(base)
+            combined.update(item)
+            merged.append(combined)
+        return clean_value(merged)
+
+    return clean_value(detailed)
 
 
 def pick_primary_elo(raw: dict[str, Any]) -> dict[str, Any]:
@@ -296,21 +358,41 @@ def normalize_media(raw: dict[str, Any], slug: str, default_rank: int | None = N
 
 def normalize_llm(raw: dict[str, Any]) -> dict[str, Any]:
     raw = clean_value(raw)
+    creator = raw.get("creator") if isinstance(raw.get("creator"), dict) else {}
+    logo = raw.get("modelCreatorLogo") or creator.get("logo")
+    if isinstance(logo, str) and "/" in logo:
+        logo = logo.rsplit("/", 1)[-1]
+    reasoning = raw.get("reasoningModel")
+    if reasoning is None and "isReasoning" in raw:
+        reasoning = raw.get("isReasoning")
+
+    price_in = raw.get("price1mInputTokens")
+    price_out = raw.get("price1mOutputTokens")
+    blended = raw.get("price1mBlended3To1")
+    if blended is None and isinstance(price_in, (int, float)) and isinstance(
+        price_out, (int, float)
+    ):
+        blended = (3 * price_in + price_out) / 4
+
+    cost_total = raw.get("intelligenceIndexCostTotal")
+    if cost_total is None:
+        cost_total = raw.get("intelligenceIndexCostPerTask")
+
     return {
-        "id": raw["id"],
+        "id": raw.get("id") or raw.get("slug"),
         "name": raw["name"],
-        "short_name": raw.get("shortName"),
+        "short_name": raw.get("shortName") or raw.get("short_name"),
         "slug": raw["slug"],
-        "release_date": raw.get("releaseDate"),
-        "reasoning_model": raw.get("reasoningModel"),
+        "release_date": raw.get("releaseDate") or raw.get("release_date"),
+        "reasoning_model": reasoning,
         "deprecated": raw.get("deprecated"),
         "creator": {
-            "id": raw.get("modelCreatorId"),
-            "name": raw.get("modelCreatorName"),
-            "slug": raw.get("modelCreatorSlug"),
-            "country": raw.get("modelCreatorCountry"),
-            "color": raw.get("modelCreatorColor"),
-            "logo": raw.get("modelCreatorLogo"),
+            "id": raw.get("modelCreatorId") or creator.get("id"),
+            "name": raw.get("modelCreatorName") or creator.get("name"),
+            "slug": raw.get("modelCreatorSlug") or creator.get("slug"),
+            "country": raw.get("modelCreatorCountry") or creator.get("country"),
+            "color": raw.get("modelCreatorColor") or creator.get("color"),
+            "logo": logo,
         },
         "evaluations": {
             "artificial_analysis_intelligence_index": raw.get("intelligenceIndex"),
@@ -333,10 +415,10 @@ def normalize_llm(raw: dict[str, Any]) -> dict[str, Any]:
             "mmmu_pro": raw.get("mmmuPro"),
         },
         "pricing": {
-            "price_1m_blended_3_to_1": raw.get("price1mBlended3To1"),
-            "price_1m_input_tokens": raw.get("price1mInputTokens"),
-            "price_1m_output_tokens": raw.get("price1mOutputTokens"),
-            "intelligence_index_cost_total": raw.get("intelligenceIndexCostTotal"),
+            "price_1m_blended_3_to_1": blended,
+            "price_1m_input_tokens": price_in,
+            "price_1m_output_tokens": price_out,
+            "intelligence_index_cost_total": cost_total,
             "intelligence_index_cost_input": raw.get("intelligenceIndexCostInput"),
             "intelligence_index_cost_output": raw.get("intelligenceIndexCostOutput"),
             "intelligence_index_cost_reasoning": raw.get("intelligenceIndexCostReasoning"),
@@ -363,7 +445,7 @@ def normalize_llm(raw: dict[str, Any]) -> dict[str, Any]:
             "total_parameters": raw.get("totalParameters"),
             "active_parameters": raw.get("activeParameters"),
             "training_tokens_trillions": raw.get("trainingTokensTrillions"),
-            "size_class": raw.get("sizeClass"),
+            "size_class": raw.get("sizeClass") or raw.get("paramClass"),
             "input_modality_text": raw.get("inputModalityText"),
             "input_modality_image": raw.get("inputModalityImage"),
             "input_modality_video": raw.get("inputModalityVideo"),
@@ -490,6 +572,8 @@ def fetch_source(source: dict[str, str], api_key: str = "") -> tuple[list[dict[s
     if slug == "llms":
         html = fetch_text(source_url)
         raw_models = extract_llm_models_from_page(html)
+        if not raw_models:
+            raise RuntimeError("LLM page payload contained 0 models")
         models = [normalize_llm(model) for model in raw_models]
         source_type = source["source_type"]
         source_ref = source_url
@@ -502,6 +586,8 @@ def fetch_source(source: dict[str, str], api_key: str = "") -> tuple[list[dict[s
             else:
                 payload = fetch_json(source_url)
                 raw_models = payload.get("models", [])
+            if not raw_models:
+                raise RuntimeError("endpoint returned 0 models")
         except Exception:
             if used_v2:
                 # v2 failed → gracefully fall back to the legacy public endpoint
@@ -509,6 +595,8 @@ def fetch_source(source: dict[str, str], api_key: str = "") -> tuple[list[dict[s
                 # fallback in main()'s exception handler).
                 payload = fetch_json(source_url)
                 raw_models = payload.get("models", [])
+                if not raw_models:
+                    raise RuntimeError("endpoint returned 0 models")
                 used_v2 = False
             else:
                 raise
@@ -602,41 +690,43 @@ def main() -> None:
             success_count += 1
             print(f"✓ {len(models)} models")
         except Exception as e:
-            if slug in GATED_MEDIA_SLUGS:
-                snapshot_path, snapshot_content = find_last_known_snapshot(
-                    repo_root, slug, date_str
+            fallback_note = GATED_NOTE
+            if slug == "llms":
+                fallback_note = LLM_FALLBACK_NOTE
+            snapshot_path, snapshot_content = find_last_known_snapshot(
+                repo_root, slug, date_str
+            )
+            if snapshot_path is not None and snapshot_content is not None:
+                original_date = snapshot_path.parent.name
+                meta = dict(snapshot_content.get("meta", {}))
+                meta["gated"] = True
+                meta["source"] = "last_known_snapshot"
+                meta["original_date"] = original_date
+                meta["note"] = fallback_note
+                meta["fetched_at"] = fetched_at
+                snapshot_content["meta"] = meta
+
+                out_path = day_dir / f"{slug}.json"
+                with open(out_path, "w", encoding="utf-8") as f:
+                    json.dump(snapshot_content, f, indent=2, ensure_ascii=False)
+
+                index["endpoints"][slug] = {
+                    "model_count": len(snapshot_content.get("models", [])),
+                    "source_type": source["source_type"],
+                    "source_url": source["source_url"],
+                    "gated": True,
+                    "note": fallback_note,
+                }
+                success_count += 1
+                gated_count += 1
+                print(
+                    f"↑ {len(snapshot_content.get('models', []))} models "
+                    f"(gated → last snapshot {original_date})"
                 )
-                if snapshot_path is not None and snapshot_content is not None:
-                    original_date = snapshot_path.parent.name
-                    meta = dict(snapshot_content.get("meta", {}))
-                    meta["gated"] = True
-                    meta["source"] = "last_known_snapshot"
-                    meta["original_date"] = original_date
-                    meta["note"] = GATED_NOTE
-                    meta["fetched_at"] = fetched_at
-                    snapshot_content["meta"] = meta
-
-                    out_path = day_dir / f"{slug}.json"
-                    with open(out_path, "w", encoding="utf-8") as f:
-                        json.dump(snapshot_content, f, indent=2, ensure_ascii=False)
-
-                    index["endpoints"][slug] = {
-                        "model_count": len(snapshot_content.get("models", [])),
-                        "source_type": source["source_type"],
-                        "source_url": source["source_url"],
-                        "gated": True,
-                        "note": GATED_NOTE,
-                    }
-                    success_count += 1
-                    gated_count += 1
-                    print(
-                        f"↑ {len(snapshot_content.get('models', []))} models "
-                        f"(gated → last snapshot {original_date})"
-                    )
-                    if i < total:
-                        time.sleep(args.delay)
-                    continue
-            # Non-gated failure, or gated slug with no usable fallback.
+                if i < total:
+                    time.sleep(args.delay)
+                continue
+            # No usable fallback snapshot.
             print(f"✗ {e}", file=sys.stderr)
             index["endpoints"][slug] = {
                 "error": str(e),
