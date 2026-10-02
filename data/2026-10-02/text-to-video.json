@@ -1,0 +1,821 @@
+{
+  "meta": {
+    "endpoint": "text-to-video",
+    "source_type": "aa_v2_api",
+    "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-video",
+    "source_description": "Text-to-video arena leaderboard",
+    "parser_version": "public-web-v1",
+    "model_count": 31,
+    "source": "https://artificialanalysis.ai/api/v2/data",
+    "gated": false,
+    "fetched_at": "2026-10-02T11:04:04.491895+00:00"
+  },
+  "models": [
+    {
+      "id": "ceee978e-c560-4ba9-9405-f7d390a47709",
+      "name": "Wan 3.0",
+      "slug": "wan-3-0",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1126,
+      "rank": 1,
+      "ci95": "-13/+13",
+      "appearances": 3569,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "75aebebb-6692-4bca-8c59-54336e4da6a3",
+      "name": "MiniMax H3 Max (based on MiniMax H3)",
+      "slug": "minimax-h3-max",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 1115,
+      "rank": 2,
+      "ci95": "-12/+12",
+      "appearances": 5672,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "da987d84-718f-4ac2-a278-518595967b42",
+      "name": "MiniMax H3 (768p)",
+      "slug": "minimax-h3-768p",
+      "release_date": null,
+      "creator": {
+        "id": "a31a9071-6144-4dbb-92dc-2e02d653ecea",
+        "name": "MiniMax"
+      },
+      "family": null,
+      "elo": 1115,
+      "rank": 3,
+      "ci95": "-12/+12",
+      "appearances": 3468,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "57913d03-a959-4752-8027-8991612448ed",
+      "name": "Dreamina Seedance 2.5",
+      "slug": "seedance-2-5-1080p",
+      "release_date": null,
+      "creator": {
+        "id": "2354746c-4775-4a06-b64d-0ba4137785b8",
+        "name": "ByteDance Seed"
+      },
+      "family": null,
+      "elo": 1095,
+      "rank": 4,
+      "ci95": "-12/+12",
+      "appearances": 3594,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "b0e23926-7240-4277-8480-b3f12c12251b",
+      "name": "FLUX 3",
+      "slug": "flux-3",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1092,
+      "rank": 5,
+      "ci95": "-12/+12",
+      "appearances": 3103,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "50ed6856-5052-431d-8994-584b2e02f023",
+      "name": "SkyReels V4",
+      "slug": "skyreels-v4",
+      "release_date": null,
+      "creator": {
+        "id": "67b5ce4d-0c81-4edc-b4c3-370acc2df555",
+        "name": "Skywork AI"
+      },
+      "family": null,
+      "elo": 1081,
+      "rank": 6,
+      "ci95": "-12/+12",
+      "appearances": 3109,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "b8289cfd-3843-4d4c-a3fb-ec5ae5e752e0",
+      "name": "Dreamina Seedance 2.0",
+      "slug": "seedance-2-0-1080p",
+      "release_date": null,
+      "creator": {
+        "id": "2354746c-4775-4a06-b64d-0ba4137785b8",
+        "name": "ByteDance Seed"
+      },
+      "family": null,
+      "elo": 1077,
+      "rank": 7,
+      "ci95": "-12/+12",
+      "appearances": 3116,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "91ad83d7-be21-4595-952a-2eefee3360e5",
+      "name": "Gemini Omni Flash 1.1",
+      "slug": "gemini-omni-flash-1-1",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 1069,
+      "rank": 8,
+      "ci95": "-12/+12",
+      "appearances": 3566,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "5518540d-d1bc-48cc-9ad3-8f20769c021e",
+      "name": "Agnes-Video-2.5",
+      "slug": "agnes-video-2-5",
+      "release_date": null,
+      "creator": {
+        "id": "5db3af1a-e372-4c62-98bd-f6027eeaf990",
+        "name": "Sapiens AI"
+      },
+      "family": null,
+      "elo": 1052,
+      "rank": 9,
+      "ci95": "-12/+12",
+      "appearances": 2947,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "e0e60f8f-ad67-4b84-aec9-4da2b9a962d5",
+      "name": "HappyHorse-1.1",
+      "slug": "happyhorse-1-1",
+      "release_date": null,
+      "creator": {
+        "id": "0ea38458-92d7-45de-a69d-c50bd8277273",
+        "name": "Alibaba-ATH"
+      },
+      "family": null,
+      "elo": 1039,
+      "rank": 10,
+      "ci95": "-12/+12",
+      "appearances": 3508,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "a4dc21f8-7a35-497e-90a4-4c9a1593c8ca",
+      "name": "HappyHorse-1.0",
+      "slug": "happyhorse-1-0",
+      "release_date": null,
+      "creator": {
+        "id": "0ea38458-92d7-45de-a69d-c50bd8277273",
+        "name": "Alibaba-ATH"
+      },
+      "family": null,
+      "elo": 1036,
+      "rank": 11,
+      "ci95": "-12/+12",
+      "appearances": 2949,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "e83498b8-ae29-4eb7-a343-2a2a74eb0e53",
+      "name": "grok-imagine-video-1.5",
+      "slug": "grok-imagine-video-1.5",
+      "release_date": null,
+      "creator": {
+        "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+        "name": "SpaceXAI"
+      },
+      "family": null,
+      "elo": 1033,
+      "rank": 12,
+      "ci95": "-12/+12",
+      "appearances": 3053,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "03ff7ea5-2ee9-4f2d-9c41-01f4279362cb",
+      "name": "Wan2.7-260612",
+      "slug": "wan2-7-260612",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1023,
+      "rank": 13,
+      "ci95": "-12/+12",
+      "appearances": 3395,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "d149ad95-b3b2-4d23-8611-07a84c1a0e7f",
+      "name": "Kling 3.0 1080p (Pro)",
+      "slug": "kling-3-0-pro",
+      "release_date": null,
+      "creator": {
+        "id": "62cc833b-f55a-4489-bcae-54806d4b04ff",
+        "name": "KlingAI"
+      },
+      "family": null,
+      "elo": 1000,
+      "rank": 14,
+      "ci95": "-0/+0",
+      "appearances": 3254,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "be866b8a-d073-4ee4-9652-73227c679dc4",
+      "name": "PixVerse V6",
+      "slug": "pixverse-v6",
+      "release_date": null,
+      "creator": {
+        "id": "1942f8d6-ab55-4408-99dd-2f99c70353f6",
+        "name": "PixVerse"
+      },
+      "family": null,
+      "elo": 994,
+      "rank": 15,
+      "ci95": "-12/+12",
+      "appearances": 2986,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "553f28a1-95de-4991-9084-d9275d862f68",
+      "name": "Kling 3.0 Omni 1080p (Pro)",
+      "slug": "kling-o3-pro",
+      "release_date": null,
+      "creator": {
+        "id": "62cc833b-f55a-4489-bcae-54806d4b04ff",
+        "name": "KlingAI"
+      },
+      "family": null,
+      "elo": 989,
+      "rank": 16,
+      "ci95": "-12/+12",
+      "appearances": 2932,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "b8dc1338-a685-4c03-ad98-cf61226547b0",
+      "name": "Veo 3.1",
+      "slug": "veo-3-1",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 965,
+      "rank": 17,
+      "ci95": "-12/+12",
+      "appearances": 2997,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "f3c7e331-2b60-4f87-bc9c-363264f211a8",
+      "name": "Veo 3.1 Fast",
+      "slug": "veo-3-1-fast",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 963,
+      "rank": 18,
+      "ci95": "-12/+12",
+      "appearances": 3181,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "1d0f4e17-4e52-44fa-9de7-36308c5cee61",
+      "name": "MAGI-2 Preview (0912)",
+      "slug": "magi-2-preview-0912",
+      "release_date": null,
+      "creator": {
+        "id": "319e519d-a916-49f0-8708-ce0b54073a3c",
+        "name": "Sand.ai"
+      },
+      "family": null,
+      "elo": 960,
+      "rank": 19,
+      "ci95": "-12/+12",
+      "appearances": 2924,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "a8f7ab65-828a-4166-8fbf-616cbb01d773",
+      "name": "Veo 3.1 Lite",
+      "slug": "veo-3-1-lite",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 954,
+      "rank": 20,
+      "ci95": "-12/+12",
+      "appearances": 3046,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "b5343afd-4bff-4e97-99fc-1e2edf2e8eb1",
+      "name": "LTX-2.5 Fast",
+      "slug": "ltx-2-5-fast",
+      "release_date": null,
+      "creator": {
+        "id": "ed94442e-da40-4fa6-a209-c7e9e095a75f",
+        "name": "Lightricks"
+      },
+      "family": null,
+      "elo": 938,
+      "rank": 21,
+      "ci95": "-12/+12",
+      "appearances": 2975,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "791ff10c-594f-418b-9c1a-39313784d759",
+      "name": "LTX-2.5 Pro",
+      "slug": "ltx-2-5-pro",
+      "release_date": null,
+      "creator": {
+        "id": "ed94442e-da40-4fa6-a209-c7e9e095a75f",
+        "name": "Lightricks"
+      },
+      "family": null,
+      "elo": 932,
+      "rank": 22,
+      "ci95": "-12/+12",
+      "appearances": 3027,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "440843ac-4961-4eef-a504-158724c11fee",
+      "name": "Runway Gen-4.5 (720p)",
+      "slug": "runway-gen-4-5",
+      "release_date": null,
+      "creator": {
+        "id": "a6906d95-a471-4a0c-ad10-b989571de20c",
+        "name": "Runway"
+      },
+      "family": null,
+      "elo": 918,
+      "rank": 23,
+      "ci95": "-12/+12",
+      "appearances": 2933,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "043f0cb2-3565-45ad-bf78-7e2de8288e94",
+      "name": "Vidu Q3 Turbo",
+      "slug": "vidu-q3-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "e3a5ba75-0127-45b0-8bcc-2864b8dd404d",
+        "name": "Vidu"
+      },
+      "family": null,
+      "elo": 912,
+      "rank": 24,
+      "ci95": "-12/+12",
+      "appearances": 3107,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "d7c0367f-1adf-40ec-8195-5c5d1906efa8",
+      "name": "Vidu Q3 Pro",
+      "slug": "vidu-q3-pro",
+      "release_date": null,
+      "creator": {
+        "id": "e3a5ba75-0127-45b0-8bcc-2864b8dd404d",
+        "name": "Vidu"
+      },
+      "family": null,
+      "elo": 909,
+      "rank": 25,
+      "ci95": "-12/+12",
+      "appearances": 3105,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "46b5ed93-3586-4fc3-875b-4231492aea82",
+      "name": "Kling O1 Pro (January)",
+      "slug": "kling-o1-pro-january",
+      "release_date": null,
+      "creator": {
+        "id": "62cc833b-f55a-4489-bcae-54806d4b04ff",
+        "name": "KlingAI"
+      },
+      "family": null,
+      "elo": 894,
+      "rank": 26,
+      "ci95": "-12/+12",
+      "appearances": 2888,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "c783d9aa-c387-4f44-b371-563fd9bab06d",
+      "name": "LTX-2.3 Pro",
+      "slug": "ltx-2-3-pro",
+      "release_date": null,
+      "creator": {
+        "id": "ed94442e-da40-4fa6-a209-c7e9e095a75f",
+        "name": "Lightricks"
+      },
+      "family": null,
+      "elo": 859,
+      "rank": 27,
+      "ci95": "-13/+13",
+      "appearances": 3123,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "40f64093-99b7-4e9b-9705-651fc5b436c4",
+      "name": "LTX-2.3 Fast",
+      "slug": "ltx-2-3-fast",
+      "release_date": null,
+      "creator": {
+        "id": "ed94442e-da40-4fa6-a209-c7e9e095a75f",
+        "name": "Lightricks"
+      },
+      "family": null,
+      "elo": 856,
+      "rank": 28,
+      "ci95": "-13/+13",
+      "appearances": 2986,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "e6709ae3-1527-4977-9b9a-aa13dbbc3647",
+      "name": "Pika 2.5",
+      "slug": "pika-2-5",
+      "release_date": null,
+      "creator": {
+        "id": "acea75bb-3f76-4ce0-b168-741a31fcec0a",
+        "name": "Pika Art"
+      },
+      "family": null,
+      "elo": 852,
+      "rank": 29,
+      "ci95": "-13/+13",
+      "appearances": 2911,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "5d1c9eec-f7e5-46cd-b538-653c3f389803",
+      "name": "Boreal",
+      "slug": "boreal",
+      "release_date": null,
+      "creator": {
+        "id": "033e3219-6b49-43b4-a86f-b92a63e3ebb2",
+        "name": "Creatify"
+      },
+      "family": null,
+      "elo": 840,
+      "rank": 30,
+      "ci95": "-13/+13",
+      "appearances": 3032,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    },
+    {
+      "id": "e3ae2457-aad0-469a-ae99-5bc082b59d76",
+      "name": "P-Video",
+      "slug": "p-video",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 820,
+      "rank": 31,
+      "ci95": "-13/+13",
+      "appearances": 3022,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_minute": null
+      }
+    }
+  ]
+}
