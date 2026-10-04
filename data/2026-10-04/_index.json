@@ -1,0 +1,44 @@
+{
+  "date": "2026-10-04",
+  "fetched_at": "2026-10-04T11:05:16.068427+00:00",
+  "source": "https://artificialanalysis.ai",
+  "source_type": "public_web_surfaces",
+  "parser_version": "public-web-v1",
+  "endpoints": {
+    "llms": {
+      "model_count": 688,
+      "source_type": "page_payload",
+      "source_url": "https://artificialanalysis.ai/leaderboards/models"
+    },
+    "text-to-image": {
+      "model_count": 166,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-image",
+      "gated": false
+    },
+    "image-editing": {
+      "model_count": 80,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/image-editing",
+      "gated": false
+    },
+    "text-to-speech": {
+      "model_count": 93,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-speech",
+      "gated": false
+    },
+    "text-to-video": {
+      "model_count": 31,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-video",
+      "gated": false
+    },
+    "image-to-video": {
+      "model_count": 76,
+      "source_type": "aa_v2_api",
+      "source_url": "https://artificialanalysis.ai/api/v2/data/media/image-to-video",
+      "gated": false
+    }
+  }
+}
