@@ -1,0 +1,2745 @@
+{
+  "meta": {
+    "endpoint": "text-to-image",
+    "source_type": "aa_v2_api",
+    "source_url": "https://artificialanalysis.ai/api/v2/data/media/text-to-image",
+    "source_description": "Text-to-image arena leaderboard",
+    "parser_version": "public-web-v1",
+    "model_count": 105,
+    "source": "https://artificialanalysis.ai/api/v2/data",
+    "gated": false,
+    "fetched_at": "2026-10-22T10:06:01.386170+00:00"
+  },
+  "models": [
+    {
+      "id": "98833f93-0f33-4205-b83a-c4d42a25da4f",
+      "name": "GPT Image 2.5 Sunburst (max)",
+      "slug": "gpt-image-2.5-sunburst-2026-09-08",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 1222,
+      "rank": 1,
+      "ci95": "-10/+10",
+      "appearances": 13014,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "ac3abe51-14ca-4c04-b215-01a85f3a36ac",
+      "name": "GPT Image 2.5 Flare (max)",
+      "slug": "gpt-image-2.5-flare-2026-09-08",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 1207,
+      "rank": 2,
+      "ci95": "-10/+10",
+      "appearances": 12364,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9570e1d0-a390-48c1-a270-1317570fe3d5",
+      "name": "GPT Image 2 (high)",
+      "slug": "gpt-image-2",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 1186,
+      "rank": 3,
+      "ci95": "-11/+11",
+      "appearances": 12835,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "b6f834da-1ca2-4f4c-a215-158970a058fa",
+      "name": "Nano Banana 2.1",
+      "slug": "nano-banana-2-1",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 1176,
+      "rank": 4,
+      "ci95": "-12/+12",
+      "appearances": 6210,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "5d931c2e-797e-406e-8eb9-83ce18b5710c",
+      "name": "MAI-Image-2.6",
+      "slug": "mai-image-2-6",
+      "release_date": null,
+      "creator": {
+        "id": "4756ee95-5ddf-45e8-a9d1-075d0e5b5200",
+        "name": "Microsoft AI"
+      },
+      "family": null,
+      "elo": 1166,
+      "rank": 5,
+      "ci95": "-12/+12",
+      "appearances": 8342,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "748fadd1-ecd9-41d0-9b43-f5fccd4fb843",
+      "name": "Grok Imagine Image 2.0",
+      "slug": "grok-imagine-image-2-0",
+      "release_date": null,
+      "creator": {
+        "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+        "name": "SpaceXAI"
+      },
+      "family": null,
+      "elo": 1166,
+      "rank": 6,
+      "ci95": "-12/+12",
+      "appearances": 7481,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3180162e-693d-487d-adbb-721f859f768d",
+      "name": "Nano Banana 2 (Gemini 3.1 Flash Image)",
+      "slug": "nano-banana-2",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 1140,
+      "rank": 7,
+      "ci95": "-10/+10",
+      "appearances": 16075,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "0a7b7bb4-caa5-4334-aff3-57ad2bdead0d",
+      "name": "Muse Image",
+      "slug": "muse-image-1.0",
+      "release_date": null,
+      "creator": {
+        "id": "e1694725-0192-4e54-b1b8-c97e816c6cbe",
+        "name": "Meta"
+      },
+      "family": null,
+      "elo": 1127,
+      "rank": 8,
+      "ci95": "-11/+11",
+      "appearances": 8479,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a1ee4d6f-d136-434b-bb1d-066fe5f9bf6f",
+      "name": "GPT Image 1.5 (high)",
+      "slug": "openai-gpt_image-1-5",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 1123,
+      "rank": 9,
+      "ci95": "-11/+11",
+      "appearances": 12830,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "daa01918-0450-4825-992a-eade1f981683",
+      "name": "MAI-Image-2.6-Flash",
+      "slug": "mai-image-2-6-flash",
+      "release_date": null,
+      "creator": {
+        "id": "4756ee95-5ddf-45e8-a9d1-075d0e5b5200",
+        "name": "Microsoft AI"
+      },
+      "family": null,
+      "elo": 1119,
+      "rank": 10,
+      "ci95": "-12/+12",
+      "appearances": 5482,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6a5056eb-6854-43c4-bf18-01d185ce9e2f",
+      "name": "Nano Banana Pro (Gemini 3 Pro Image)",
+      "slug": "gemini_nano-banana-pro",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 1118,
+      "rank": 11,
+      "ci95": "-10/+10",
+      "appearances": 15174,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3f8a2d6b-9c4e-4f1a-b7d2-8e5a0c3d71f9",
+      "name": "MAI-Image-2.5",
+      "slug": "mai-image-2-5",
+      "release_date": null,
+      "creator": {
+        "id": "4756ee95-5ddf-45e8-a9d1-075d0e5b5200",
+        "name": "Microsoft AI"
+      },
+      "family": null,
+      "elo": 1118,
+      "rank": 12,
+      "ci95": "-11/+11",
+      "appearances": 13789,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "952cb4e8-6155-45f4-a653-f426669cf80a",
+      "name": "FLUX 3 Image",
+      "slug": "flux-3-image",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1117,
+      "rank": 13,
+      "ci95": "-12/+12",
+      "appearances": 6115,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "503fdcd1-5895-4145-8484-1ab301320f6d",
+      "name": "MAI-Image-2.5-Pro",
+      "slug": "mai-image-2-5-pro",
+      "release_date": null,
+      "creator": {
+        "id": "4756ee95-5ddf-45e8-a9d1-075d0e5b5200",
+        "name": "Microsoft AI"
+      },
+      "family": null,
+      "elo": 1114,
+      "rank": 14,
+      "ci95": "-10/+10",
+      "appearances": 12200,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "7f1079f3-b886-4ac1-bd3e-7059da87ff28",
+      "name": "Nano Banana 2 Lite (Gemini 3.1 Flash Lite Image)",
+      "slug": "nano-banana-2-lite",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 1107,
+      "rank": 15,
+      "ci95": "-10/+10",
+      "appearances": 15080,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "c9e4f0a2-3b7d-4c61-8e29-1f5a6d0b47c3",
+      "name": "Seedream 5.0 Pro",
+      "slug": "seedream-5-0-pro",
+      "release_date": null,
+      "creator": {
+        "id": "2354746c-4775-4a06-b64d-0ba4137785b8",
+        "name": "ByteDance Seed"
+      },
+      "family": null,
+      "elo": 1100,
+      "rank": 16,
+      "ci95": "-11/+11",
+      "appearances": 11633,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "5538a039-fb86-4cd7-a207-4d692f358032",
+      "name": "Qwen-Image-3.0-Pro",
+      "slug": "qwen-image-3-0-pro",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1095,
+      "rank": 17,
+      "ci95": "-12/+12",
+      "appearances": 6332,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "2253749f-b609-4016-b639-0ce39a42375a",
+      "name": "Qwen-Image-3.0",
+      "slug": "qwen-image-3-0",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1070,
+      "rank": 18,
+      "ci95": "-12/+12",
+      "appearances": 6090,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "74eeddb9-9c0b-4dbc-b188-27f91a811bd3",
+      "name": "Qwen-Image-2.1-Pro",
+      "slug": "qwen-image-2-1-pro",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1056,
+      "rank": 19,
+      "ci95": "-12/+12",
+      "appearances": 4970,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9fe07c8f-8d20-4908-a991-65c00e5ef260",
+      "name": "grok-imagine-image-quality",
+      "slug": "grok-imagine-image-quality",
+      "release_date": null,
+      "creator": {
+        "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+        "name": "SpaceXAI"
+      },
+      "family": null,
+      "elo": 1049,
+      "rank": 20,
+      "ci95": "-9/+9",
+      "appearances": 16728,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "dea37206-747e-49f3-8bed-6541ca505d03",
+      "name": "Qwen-Image-2.1",
+      "slug": "qwen-image-2-1",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1042,
+      "rank": 21,
+      "ci95": "-12/+12",
+      "appearances": 5712,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "5aa06cdc-2d14-44d2-ae75-cd1230bca9f7",
+      "name": "Fibo 2.0",
+      "slug": "fibo-2-0",
+      "release_date": null,
+      "creator": {
+        "id": "95c9bc82-f015-4ed4-8da0-4729f2d14f09",
+        "name": "Bria"
+      },
+      "family": null,
+      "elo": 1039,
+      "rank": 22,
+      "ci95": "-12/+12",
+      "appearances": 5113,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "4f4bff18-e48f-4f7f-aa6b-94e9a9a11b68",
+      "name": "Krea 2 Large",
+      "slug": "krea-2-large",
+      "release_date": null,
+      "creator": {
+        "id": "da6aca5c-fe97-453a-b5cb-43de1ac7210b",
+        "name": "Krea"
+      },
+      "family": null,
+      "elo": 1034,
+      "rank": 23,
+      "ci95": "-9/+9",
+      "appearances": 14513,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "16e22800-1485-4b5f-b28c-bf802ca160ac",
+      "name": "Qwen Image 2.0 Pro (2026-04-22)",
+      "slug": "qwen-image-2-0-pro-alibaba-cloud-may-2026",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1030,
+      "rank": 24,
+      "ci95": "-11/+11",
+      "appearances": 6138,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "e23a6328-1441-4633-b53c-bb2c40c5a647",
+      "name": "MAI-Image-2.5-Flash",
+      "slug": "mai-image-2-5-flash",
+      "release_date": null,
+      "creator": {
+        "id": "4756ee95-5ddf-45e8-a9d1-075d0e5b5200",
+        "name": "Microsoft AI"
+      },
+      "family": null,
+      "elo": 1029,
+      "rank": 25,
+      "ci95": "-11/+11",
+      "appearances": 5855,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3c29418c-ff63-459d-9d78-b9cceea260ce",
+      "name": "Qwen-Image-2.1-Turbo",
+      "slug": "qwen-image-2-1-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1029,
+      "rank": 26,
+      "ci95": "-12/+12",
+      "appearances": 4625,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "c8a7698c-a595-476d-a56b-8b3ef4f239b7",
+      "name": "Wan 2.6 Image",
+      "slug": "wan_wan-2-6",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1027,
+      "rank": 27,
+      "ci95": "-12/+12",
+      "appearances": 5370,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "e633cd0c-68a3-4c73-a020-98e2d75a03a6",
+      "name": "Recraft V4.1 Utility",
+      "slug": "recraft-v4-1-utility",
+      "release_date": null,
+      "creator": {
+        "id": "02845eed-a64f-4ddd-af96-8409678c890a",
+        "name": "Recraft"
+      },
+      "family": null,
+      "elo": 1026,
+      "rank": 28,
+      "ci95": "-11/+11",
+      "appearances": 7452,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "08f19008-675e-4d70-98b2-49ad3178c1f0",
+      "name": "Seedream 4.5",
+      "slug": "seedream-4-5",
+      "release_date": null,
+      "creator": {
+        "id": "2354746c-4775-4a06-b64d-0ba4137785b8",
+        "name": "ByteDance Seed"
+      },
+      "family": null,
+      "elo": 1026,
+      "rank": 29,
+      "ci95": "-12/+12",
+      "appearances": 6392,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "e2201d15-3e29-48c6-89ba-e63ccf3dde15",
+      "name": "FLUX.2 [flex]",
+      "slug": "flux_flux-2--flex",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1026,
+      "rank": 30,
+      "ci95": "-11/+11",
+      "appearances": 6082,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "f625feda-2695-40cc-ba87-a5e65b914021",
+      "name": "Ideogram 4.0 (Quality)",
+      "slug": "ideogram-v4-quality",
+      "release_date": null,
+      "creator": {
+        "id": "a8b2ac11-1f36-44cb-9e88-383c4e0d749f",
+        "name": "Ideogram"
+      },
+      "family": null,
+      "elo": 1026,
+      "rank": 31,
+      "ci95": "-10/+10",
+      "appearances": 10688,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a71a9c1d-a20f-4237-8e36-8a58558e2edc",
+      "name": "Luma UNI 1 Max",
+      "slug": "luma-uni-1-max",
+      "release_date": null,
+      "creator": {
+        "id": "09468924-69a9-499b-8dd6-d0bb4c05285d",
+        "name": "Luma Labs"
+      },
+      "family": null,
+      "elo": 1023,
+      "rank": 32,
+      "ci95": "-12/+12",
+      "appearances": 5539,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "bcc5b88d-1bb0-45e6-9940-2f8b99567b40",
+      "name": "grok-imagine-image",
+      "slug": "grok-imagine-image",
+      "release_date": null,
+      "creator": {
+        "id": "a1e3ddcf-d3e4-44a5-9e8f-029a69850875",
+        "name": "SpaceXAI"
+      },
+      "family": null,
+      "elo": 1022,
+      "rank": 33,
+      "ci95": "-11/+11",
+      "appearances": 6330,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6a398b55-7f36-4039-bbbf-2045ef8ab525",
+      "name": "FLUX.2 [max]",
+      "slug": "black_forest_labs_flux-2-max",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1021,
+      "rank": 34,
+      "ci95": "-10/+10",
+      "appearances": 11097,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "b461c47d-a141-4f70-8ed1-c42f808ee44c",
+      "name": "Krea 2 Medium Turbo",
+      "slug": "krea-2-medium-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "da6aca5c-fe97-453a-b5cb-43de1ac7210b",
+        "name": "Krea"
+      },
+      "family": null,
+      "elo": 1020,
+      "rank": 35,
+      "ci95": "-11/+11",
+      "appearances": 6060,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "4ead8ffd-aa90-4fab-93f3-d3f4495657f8",
+      "name": "Recraft V4.1 Utility Pro",
+      "slug": "recraft-v4-1-utility-pro",
+      "release_date": null,
+      "creator": {
+        "id": "02845eed-a64f-4ddd-af96-8409678c890a",
+        "name": "Recraft"
+      },
+      "family": null,
+      "elo": 1017,
+      "rank": 36,
+      "ci95": "-9/+9",
+      "appearances": 15414,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "1308be83-54a3-4284-880e-bd31996a9225",
+      "name": "HiDream-O1-Image-1.5",
+      "slug": "hidream-o1-image-1-5",
+      "release_date": null,
+      "creator": {
+        "id": "040f2c41-5df4-4708-8c77-6a2030be2539",
+        "name": "HiDream"
+      },
+      "family": null,
+      "elo": 1017,
+      "rank": 37,
+      "ci95": "-11/+11",
+      "appearances": 12168,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d82c66de-d55a-4b6a-af16-f5bf808431cc",
+      "name": "Seedream 5.0 Lite",
+      "slug": "seedream-5-0-lite",
+      "release_date": null,
+      "creator": {
+        "id": "2354746c-4775-4a06-b64d-0ba4137785b8",
+        "name": "ByteDance Seed"
+      },
+      "family": null,
+      "elo": 1017,
+      "rank": 38,
+      "ci95": "-12/+12",
+      "appearances": 5605,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "8358ca21-5c7b-48f2-9b26-a1a1fa770f46",
+      "name": "Ideogram 4.5 (High)",
+      "slug": "ideogram-v4-5-high",
+      "release_date": null,
+      "creator": {
+        "id": "a8b2ac11-1f36-44cb-9e88-383c4e0d749f",
+        "name": "Ideogram"
+      },
+      "family": null,
+      "elo": 1015,
+      "rank": 39,
+      "ci95": "-15/+15",
+      "appearances": 2888,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "caa670a4-e827-4a4b-84fb-2dd240205fe2",
+      "name": "Wan2.6 Text to Image",
+      "slug": "wan_wan-2-6-text-to-image-v2",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 1014,
+      "rank": 40,
+      "ci95": "-12/+12",
+      "appearances": 5561,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "2f5ebb1e-6d5f-48b0-95bf-3b590fd45971",
+      "name": "GPT Image 1 (high)",
+      "slug": "openai-gpt_gpt-image-1--high",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 1013,
+      "rank": 41,
+      "ci95": "-12/+12",
+      "appearances": 5518,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "01ec8e55-dad9-4e6f-9036-e1da2a5226b6",
+      "name": "Krea 2 Medium",
+      "slug": "krea-2-medium",
+      "release_date": null,
+      "creator": {
+        "id": "da6aca5c-fe97-453a-b5cb-43de1ac7210b",
+        "name": "Krea"
+      },
+      "family": null,
+      "elo": 1012,
+      "rank": 42,
+      "ci95": "-9/+9",
+      "appearances": 14449,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "18874791-11a3-4cb7-bc0e-6ca10138eec7",
+      "name": "FLUX.2 [pro]",
+      "slug": "flux_flux-2--pro",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1003,
+      "rank": 43,
+      "ci95": "-10/+10",
+      "appearances": 10826,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "ffb60b61-95c2-414d-a4d1-7070e2daad59",
+      "name": "Ideogram 4.0",
+      "slug": "ideogram-v4",
+      "release_date": null,
+      "creator": {
+        "id": "a8b2ac11-1f36-44cb-9e88-383c4e0d749f",
+        "name": "Ideogram"
+      },
+      "family": null,
+      "elo": 1002,
+      "rank": 44,
+      "ci95": "-10/+10",
+      "appearances": 10102,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "df44f7b5-8035-4a99-a0bb-ff22149d0464",
+      "name": "FLUX.2 [dev]",
+      "slug": "flux_flux-2--dev",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 1000,
+      "rank": 45,
+      "ci95": "-0/+0",
+      "appearances": 18040,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a035e463-270c-4ad4-aa7e-d31509b300f7",
+      "name": "Ming-Image-0.1-Design",
+      "slug": "ming-image-0-1-design",
+      "release_date": null,
+      "creator": {
+        "id": "4df238a9-d4fd-4cf2-ab1e-d12956c41f9b",
+        "name": "InclusionAI"
+      },
+      "family": null,
+      "elo": 999,
+      "rank": 46,
+      "ci95": "-9/+9",
+      "appearances": 20241,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9a73193a-8830-4fa8-98f4-0230cd749914",
+      "name": "P-Image-Ideogram (High)",
+      "slug": "p-image-ideogram-high",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 995,
+      "rank": 47,
+      "ci95": "-14/+14",
+      "appearances": 3572,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "db7a9087-0b50-41f8-ac41-fb48db3aa459",
+      "name": "FLUX.2 [dev] Turbo",
+      "slug": "fal_flux-2-dev-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 994,
+      "rank": 48,
+      "ci95": "-11/+11",
+      "appearances": 6274,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3ab1625b-0838-4314-a684-3d34328dfe65",
+      "name": "Cosmos3-Super-Text2Image (agentic)",
+      "slug": "cosmos3-super-text2image-agentic",
+      "release_date": null,
+      "creator": {
+        "id": "0c303112-430d-4367-a484-51defaa2e166",
+        "name": "NVIDIA"
+      },
+      "family": null,
+      "elo": 993,
+      "rank": 49,
+      "ci95": "-10/+10",
+      "appearances": 11549,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6cd594e7-1871-45e2-a33d-dc73fd4aac11",
+      "name": "Luma UNI 1",
+      "slug": "luma-uni-1",
+      "release_date": null,
+      "creator": {
+        "id": "09468924-69a9-499b-8dd6-d0bb4c05285d",
+        "name": "Luma Labs"
+      },
+      "family": null,
+      "elo": 992,
+      "rank": 50,
+      "ci95": "-12/+12",
+      "appearances": 5559,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "fe1a6e08-b922-4996-b029-4601b8248806",
+      "name": "P-Image-Ideogram (Very High)",
+      "slug": "p-image-ideogram-very-high",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 992,
+      "rank": 51,
+      "ci95": "-15/+15",
+      "appearances": 2776,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "59b0cb98-b550-40f1-b863-a2daca08ab81",
+      "name": "Qwen Image 2.0 (2026-03-03)",
+      "slug": "qwen-image-2-0-alibaba-cloud-may-2026",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 990,
+      "rank": 52,
+      "ci95": "-16/+16",
+      "appearances": 2633,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "87c9da43-efdc-408e-b7bb-fe77ed3afa88",
+      "name": "HunyuanImage 3.0 (Tencent Cloud)",
+      "slug": "hunyuanimage-3-0-tencent-cloud",
+      "release_date": null,
+      "creator": {
+        "id": "a4e5bd55-a6cd-4dcf-8d4a-1d9643cd3826",
+        "name": "Tencent"
+      },
+      "family": null,
+      "elo": 989,
+      "rank": 53,
+      "ci95": "-16/+16",
+      "appearances": 2531,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "0413f436-9aa3-4f92-aa34-9432841c1830",
+      "name": "FLUX.2 [dev] Flash",
+      "slug": "fal_flux-2-dev-flash",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 988,
+      "rank": 54,
+      "ci95": "-12/+12",
+      "appearances": 5344,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6c1e28b9-3165-4637-9944-c4b55d634237",
+      "name": "HunyuanImage 3.0 Instruct",
+      "slug": "hunyuanimage-3-0-instruct",
+      "release_date": null,
+      "creator": {
+        "id": "a4e5bd55-a6cd-4dcf-8d4a-1d9643cd3826",
+        "name": "Tencent"
+      },
+      "family": null,
+      "elo": 987,
+      "rank": 55,
+      "ci95": "-12/+12",
+      "appearances": 5683,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "7795ac1e-7098-4dc0-9507-cfa8478cda6d",
+      "name": "Wan 2.7",
+      "slug": "wan-2-7",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 986,
+      "rank": 56,
+      "ci95": "-12/+12",
+      "appearances": 5491,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "498395f7-5cde-4443-9f05-1dfc164caa6f",
+      "name": "Cosmos3-Super-Text2Image",
+      "slug": "cosmos3-super-text2image",
+      "release_date": null,
+      "creator": {
+        "id": "0c303112-430d-4367-a484-51defaa2e166",
+        "name": "NVIDIA"
+      },
+      "family": null,
+      "elo": 985,
+      "rank": 57,
+      "ci95": "-10/+10",
+      "appearances": 10887,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "ead01c00-8518-4f8d-8033-76fcaef910fd",
+      "name": "Nano Banana (Gemini 2.5 Flash Image)",
+      "slug": "google_gemini-2-5-flash",
+      "release_date": null,
+      "creator": {
+        "id": "faddc6d9-2c14-445f-9b28-56726f59c793",
+        "name": "Google"
+      },
+      "family": null,
+      "elo": 985,
+      "rank": 58,
+      "ci95": "-12/+12",
+      "appearances": 5312,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "16ecb9ee-9d8d-4151-a9f6-e6ef2aa12d26",
+      "name": "Ideogram 4.0 Fast (Quality)",
+      "slug": "ideogram-v4-fast-quality",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 982,
+      "rank": 59,
+      "ci95": "-12/+12",
+      "appearances": 5946,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "740929c5-09b6-4a81-b98e-00e903e27d84",
+      "name": "Ideogram 4.0 Instant",
+      "slug": "ideogram-v4-instant",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 981,
+      "rank": 60,
+      "ci95": "-12/+12",
+      "appearances": 5492,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d587cfaa-e0f2-495c-a012-5f1cfcdf5c09",
+      "name": "Wan 2.7 Pro",
+      "slug": "wan-2-7-pro",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 979,
+      "rank": 61,
+      "ci95": "-12/+12",
+      "appearances": 5498,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "5eb8a48a-334c-4770-b722-3bf5a1842c12",
+      "name": "HiDream-O1-Image",
+      "slug": "hidream-o1-image",
+      "release_date": null,
+      "creator": {
+        "id": "040f2c41-5df4-4708-8c77-6a2030be2539",
+        "name": "HiDream"
+      },
+      "family": null,
+      "elo": 975,
+      "rank": 62,
+      "ci95": "-10/+10",
+      "appearances": 10662,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d74e176c-b2ca-4132-b641-fc4932c2314d",
+      "name": "P-Image-Ideogram (Medium)",
+      "slug": "p-image-ideogram-medium",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 972,
+      "rank": 63,
+      "ci95": "-14/+14",
+      "appearances": 3761,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a972f679-3043-42fd-a8d2-a866b5acb516",
+      "name": "Cosmos3-Super-Text2Image-4Step",
+      "slug": "cosmos3-super-text2image-4step",
+      "release_date": null,
+      "creator": {
+        "id": "0c303112-430d-4367-a484-51defaa2e166",
+        "name": "NVIDIA"
+      },
+      "family": null,
+      "elo": 970,
+      "rank": 64,
+      "ci95": "-10/+10",
+      "appearances": 9044,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "ac3abb25-ef1d-43be-967e-9cd48d9d786a",
+      "name": "HunyuanImage 3.5 (Preview)",
+      "slug": "hunyuanimage-3-5-preview",
+      "release_date": null,
+      "creator": {
+        "id": "a4e5bd55-a6cd-4dcf-8d4a-1d9643cd3826",
+        "name": "Tencent"
+      },
+      "family": null,
+      "elo": 970,
+      "rank": 65,
+      "ci95": "-12/+12",
+      "appearances": 5586,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a7537dba-f8c0-4e26-9693-c593a69a3db8",
+      "name": "Ideogram 4.0 Fast",
+      "slug": "ideogram-v4-fast",
+      "release_date": null,
+      "creator": {
+        "id": "d3f67dc4-ba4d-4103-ba79-ee321ca99b40",
+        "name": "Fal"
+      },
+      "family": null,
+      "elo": 963,
+      "rank": 66,
+      "ci95": "-12/+12",
+      "appearances": 5438,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d5a99ffc-7fb6-48c3-8543-75c4c07706f0",
+      "name": "P-Image-Ideogram (Low)",
+      "slug": "p-image-ideogram-low",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 959,
+      "rank": 67,
+      "ci95": "-14/+14",
+      "appearances": 3832,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "c02b3b9d-2847-46b2-b410-98e29a594fa5",
+      "name": "Qwen Image Plus 2601",
+      "slug": "qwen_qwen-image-plus-2601",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 952,
+      "rank": 68,
+      "ci95": "-16/+16",
+      "appearances": 2584,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "2106ec2e-158c-4978-82e0-9049e3d8d90f",
+      "name": "Recraft V4.1 Flash",
+      "slug": "recraft-v4-1-flash",
+      "release_date": null,
+      "creator": {
+        "id": "02845eed-a64f-4ddd-af96-8409678c890a",
+        "name": "Recraft"
+      },
+      "family": null,
+      "elo": 949,
+      "rank": 69,
+      "ci95": "-12/+12",
+      "appearances": 5770,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "95a40d42-7e24-42ac-8e86-ded5ba37c6ea",
+      "name": "GPT Image 1 Mini (medium)",
+      "slug": "openai-gpt_gpt-image-1-mini--medium",
+      "release_date": null,
+      "creator": {
+        "id": "e67e56e3-15cd-43db-b679-da4660a69f41",
+        "name": "OpenAI"
+      },
+      "family": null,
+      "elo": 936,
+      "rank": 70,
+      "ci95": "-17/+17",
+      "appearances": 2333,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d48735c9-9f0f-45b6-ad45-cc03eec252c8",
+      "name": "Z-Image Turbo",
+      "slug": "alibaba_z-image-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 936,
+      "rank": 71,
+      "ci95": "-11/+11",
+      "appearances": 8170,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "1522bb2b-0ec1-4cbe-aa0f-3dd04b784035",
+      "name": "HunyuanImage 3.0",
+      "slug": "hunyuanimage-3-0",
+      "release_date": null,
+      "creator": {
+        "id": "a4e5bd55-a6cd-4dcf-8d4a-1d9643cd3826",
+        "name": "Tencent"
+      },
+      "family": null,
+      "elo": 932,
+      "rank": 72,
+      "ci95": "-16/+16",
+      "appearances": 2443,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "561d9150-bc67-4212-8129-2d239f06fde8",
+      "name": "Dreamina 3.1",
+      "slug": "dreamina-3-1",
+      "release_date": null,
+      "creator": {
+        "id": "582174aa-90d5-4a43-9c4d-64dc0af57547",
+        "name": "Bytedance"
+      },
+      "family": null,
+      "elo": 931,
+      "rank": 73,
+      "ci95": "-17/+17",
+      "appearances": 2372,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3a03722d-32c0-44f3-adde-188c51b639f1",
+      "name": "FLUX.2 [klein] 9B",
+      "slug": "flux_flux-2-klein-9b",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 929,
+      "rank": 74,
+      "ci95": "-10/+10",
+      "appearances": 10730,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "b7c09073-9046-4043-884b-ac541fedbbac",
+      "name": "FLUX.1 Kontext [max]",
+      "slug": "flux-1-kontext-max",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 929,
+      "rank": 75,
+      "ci95": "-12/+12",
+      "appearances": 5276,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "aef67397-7859-4806-8fbb-6b50e391feec",
+      "name": "Kling Image 3.0 Omni",
+      "slug": "kling-image-3-0-omni",
+      "release_date": null,
+      "creator": {
+        "id": "62cc833b-f55a-4489-bcae-54806d4b04ff",
+        "name": "KlingAI"
+      },
+      "family": null,
+      "elo": 918,
+      "rank": 76,
+      "ci95": "-17/+17",
+      "appearances": 2672,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "3338f278-fb1f-4727-b9af-d51ae3ab7e36",
+      "name": "FLUX.1 Kontext [pro]",
+      "slug": "flux-1-kontext-pro",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 917,
+      "rank": 77,
+      "ci95": "-18/+18",
+      "appearances": 2229,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "2a91c547-e6e1-46b6-bb73-abd73d518de8",
+      "name": "ERNIE Image Turbo",
+      "slug": "ernie-image-turbo",
+      "release_date": null,
+      "creator": {
+        "id": "bfb6e769-2456-4027-a6da-e9e05b627a21",
+        "name": "Baidu"
+      },
+      "family": null,
+      "elo": 914,
+      "rank": 78,
+      "ci95": "-10/+10",
+      "appearances": 10560,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "7f4a0972-2e00-4cd1-9c93-57e81b0791a8",
+      "name": "Ideogram 3.0",
+      "slug": "ideogram-3-0",
+      "release_date": null,
+      "creator": {
+        "id": "a8b2ac11-1f36-44cb-9e88-383c4e0d749f",
+        "name": "Ideogram"
+      },
+      "family": null,
+      "elo": 911,
+      "rank": 79,
+      "ci95": "-18/+18",
+      "appearances": 2333,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "e2fa2f78-4a0c-4e2f-b3cf-53d213a18872",
+      "name": "P-Image-Ideogram (Very Low)",
+      "slug": "p-image-ideogram-very-low",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 909,
+      "rank": 80,
+      "ci95": "-15/+15",
+      "appearances": 3309,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "72d1951d-075a-421b-9002-66537114124c",
+      "name": "ERNIE Image",
+      "slug": "ernie-image",
+      "release_date": null,
+      "creator": {
+        "id": "bfb6e769-2456-4027-a6da-e9e05b627a21",
+        "name": "Baidu"
+      },
+      "family": null,
+      "elo": 907,
+      "rank": 81,
+      "ci95": "-10/+10",
+      "appearances": 10760,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "a7ce8a95-072f-4ca2-b574-35400c21d005",
+      "name": "Qwen Image",
+      "slug": "qwen-image",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 903,
+      "rank": 82,
+      "ci95": "-18/+18",
+      "appearances": 2339,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "c404f12b-b1a8-47d2-bbff-3aa5f73be475",
+      "name": "P-Image",
+      "slug": "pruna_p-image",
+      "release_date": null,
+      "creator": {
+        "id": "a98e0396-4ef1-4a39-bb12-b004c7590bee",
+        "name": "Pruna AI"
+      },
+      "family": null,
+      "elo": 900,
+      "rank": 83,
+      "ci95": "-18/+18",
+      "appearances": 2351,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "7fd58fea-e8b4-46c9-a421-409db1b54a71",
+      "name": "FLUX.1 Krea [dev]",
+      "slug": "flux-1-krea-dev",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 896,
+      "rank": 84,
+      "ci95": "-39/+39",
+      "appearances": 515,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "29714890-0638-4648-a1df-3fdc2a4b42fa",
+      "name": "Vidu Q2",
+      "slug": "vidu_vidu_q2",
+      "release_date": null,
+      "creator": {
+        "id": "e3a5ba75-0127-45b0-8bcc-2864b8dd404d",
+        "name": "Vidu"
+      },
+      "family": null,
+      "elo": 896,
+      "rank": 85,
+      "ci95": "-17/+17",
+      "appearances": 2524,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "7f802e5d-8297-41f7-bf2e-cd442b4eb37e",
+      "name": "Z-Image Base",
+      "slug": "alibaba_z-image-base",
+      "release_date": null,
+      "creator": {
+        "id": "d874d370-74d3-4fa0-ba00-5272f92f946b",
+        "name": "Alibaba"
+      },
+      "family": null,
+      "elo": 891,
+      "rank": 86,
+      "ci95": "-17/+17",
+      "appearances": 2500,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "5eba28d1-5f14-45e5-970a-47cd5da79c54",
+      "name": "GLM-Image",
+      "slug": "glm_glm-image",
+      "release_date": null,
+      "creator": {
+        "id": "67437eb6-7dc1-4e93-befd-22c8b8ec2065",
+        "name": "Z AI"
+      },
+      "family": null,
+      "elo": 885,
+      "rank": 87,
+      "ci95": "-18/+18",
+      "appearances": 2457,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "8d8aa93e-0d6c-4973-9946-e00e52eeb01d",
+      "name": "Lucid Origin Ultra",
+      "slug": "lucid-origin-ultra",
+      "release_date": null,
+      "creator": {
+        "id": "c104be52-31ea-4948-b921-265dc297f3ac",
+        "name": "Leonardo.Ai"
+      },
+      "family": null,
+      "elo": 877,
+      "rank": 88,
+      "ci95": "-17/+17",
+      "appearances": 2689,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "f1182fcf-b690-413a-9a9b-38cec96e9e09",
+      "name": "FLUX1.1 [pro]",
+      "slug": "flux1-1-pro",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 870,
+      "rank": 89,
+      "ci95": "-19/+19",
+      "appearances": 2247,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "2ec24cf9-bef1-44f2-ae97-32f49f7905e2",
+      "name": "Lucid Origin Fast",
+      "slug": "lucid-origin-fast",
+      "release_date": null,
+      "creator": {
+        "id": "c104be52-31ea-4948-b921-265dc297f3ac",
+        "name": "Leonardo.Ai"
+      },
+      "family": null,
+      "elo": 860,
+      "rank": 90,
+      "ci95": "-18/+18",
+      "appearances": 2611,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "e9c23b00-b46b-428a-9b0f-68308747873b",
+      "name": "LongCat Image",
+      "slug": "longcat_longcat-image",
+      "release_date": null,
+      "creator": {
+        "id": "61d88a80-1fd3-40c8-a6ac-89271d06f704",
+        "name": "Meituan"
+      },
+      "family": null,
+      "elo": 856,
+      "rank": 91,
+      "ci95": "-19/+19",
+      "appearances": 2146,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "aa524f71-2f87-4395-b1c1-83dfa20bd87c",
+      "name": "FLUX1.1 [pro] Ultra",
+      "slug": "flux1-1-pro-ultra",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 855,
+      "rank": 92,
+      "ci95": "-19/+19",
+      "appearances": 2284,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9d206113-8eec-4e37-9033-3699b4e2c4c1",
+      "name": "FIBO",
+      "slug": "bria_fibo",
+      "release_date": null,
+      "creator": {
+        "id": "95c9bc82-f015-4ed4-8da0-4729f2d14f09",
+        "name": "Bria"
+      },
+      "family": null,
+      "elo": 849,
+      "rank": 93,
+      "ci95": "-19/+19",
+      "appearances": 2258,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "bbb9085a-55dd-4afe-955d-0326019503a7",
+      "name": "Luma Photon",
+      "slug": "luma-photon",
+      "release_date": null,
+      "creator": {
+        "id": "09468924-69a9-499b-8dd6-d0bb4c05285d",
+        "name": "Luma Labs"
+      },
+      "family": null,
+      "elo": 843,
+      "rank": 94,
+      "ci95": "-19/+19",
+      "appearances": 2251,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6443510e-aedc-423b-9a16-478534b16269",
+      "name": "FLUX.2 [klein] 4B",
+      "slug": "flux_flux-2-klein-4b",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 837,
+      "rank": 95,
+      "ci95": "-12/+12",
+      "appearances": 6418,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9f592429-9411-4c1e-bebe-780d2790759a",
+      "name": "Phoenix 0.9 Ultra",
+      "slug": "phoenix-0-9-ultra",
+      "release_date": null,
+      "creator": {
+        "id": "c104be52-31ea-4948-b921-265dc297f3ac",
+        "name": "Leonardo.Ai"
+      },
+      "family": null,
+      "elo": 833,
+      "rank": 96,
+      "ci95": "-20/+20",
+      "appearances": 2214,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "ba1d4694-1170-4cc1-b19a-3067a8c1341c",
+      "name": "Phoenix 1.0 Fast",
+      "slug": "phoenix-1-0-fast",
+      "release_date": null,
+      "creator": {
+        "id": "c104be52-31ea-4948-b921-265dc297f3ac",
+        "name": "Leonardo.Ai"
+      },
+      "family": null,
+      "elo": 827,
+      "rank": 97,
+      "ci95": "-20/+20",
+      "appearances": 2151,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "6ec6098b-3530-4de5-b2fc-24cde58933ab",
+      "name": "SRPO",
+      "slug": "flux_srpo",
+      "release_date": null,
+      "creator": {
+        "id": "a4e5bd55-a6cd-4dcf-8d4a-1d9643cd3826",
+        "name": "Tencent"
+      },
+      "family": null,
+      "elo": 826,
+      "rank": 98,
+      "ci95": "-20/+20",
+      "appearances": 2154,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "42f6daca-7146-4620-8977-d190d7fac51a",
+      "name": "FLUX.1 [dev]",
+      "slug": "flux-1-dev",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 823,
+      "rank": 99,
+      "ci95": "-45/+45",
+      "appearances": 511,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "95379740-648d-4251-8ae8-33b3021ad14b",
+      "name": "FIBO Lite",
+      "slug": "bria_fibo-lite",
+      "release_date": null,
+      "creator": {
+        "id": "95c9bc82-f015-4ed4-8da0-4729f2d14f09",
+        "name": "Bria"
+      },
+      "family": null,
+      "elo": 813,
+      "rank": 100,
+      "ci95": "-16/+16",
+      "appearances": 3300,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "9cb8045c-3c85-4023-8585-88ca0eff8452",
+      "name": "HiDream-O1-Image-Dev",
+      "slug": "hidream-o1-image-dev",
+      "release_date": null,
+      "creator": {
+        "id": "040f2c41-5df4-4708-8c77-6a2030be2539",
+        "name": "HiDream"
+      },
+      "family": null,
+      "elo": 810,
+      "rank": 101,
+      "ci95": "-20/+20",
+      "appearances": 2323,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "61ace12c-0fb5-4262-a0b7-80845c84b40d",
+      "name": "Luma Photon Flash",
+      "slug": "luma-photon-flash",
+      "release_date": null,
+      "creator": {
+        "id": "09468924-69a9-499b-8dd6-d0bb4c05285d",
+        "name": "Luma Labs"
+      },
+      "family": null,
+      "elo": 769,
+      "rank": 102,
+      "ci95": "-23/+23",
+      "appearances": 2052,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "d77cfc0a-2fa1-4f8e-9f7f-a666b348b1e9",
+      "name": "FLUX.1 [schnell]",
+      "slug": "flux-1-schnell",
+      "release_date": null,
+      "creator": {
+        "id": "d427ad30-eba3-4945-857a-4eb0ead82e87",
+        "name": "Black Forest Labs"
+      },
+      "family": null,
+      "elo": 740,
+      "rank": 103,
+      "ci95": "-20/+20",
+      "appearances": 3045,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "b2a76bb0-47e8-4781-a497-1f942ca605c7",
+      "name": "OmniGen V2",
+      "slug": "omnigen-v2",
+      "release_date": null,
+      "creator": {
+        "id": "d2928e1f-884a-4728-8d1c-d48db15c561d",
+        "name": "VectorSpaceLab"
+      },
+      "family": null,
+      "elo": 717,
+      "rank": 104,
+      "ci95": "-26/+26",
+      "appearances": 2043,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    },
+    {
+      "id": "1189110d-671d-4de9-877c-f9797f161134",
+      "name": "Bagel",
+      "slug": "bagel",
+      "release_date": null,
+      "creator": {
+        "id": "582174aa-90d5-4a43-9c4d-64dc0af57547",
+        "name": "Bytedance"
+      },
+      "family": null,
+      "elo": 594,
+      "rank": 105,
+      "ci95": "-35/+35",
+      "appearances": 2081,
+      "wins": null,
+      "win_rate": null,
+      "open_weights_url": null,
+      "is_current": null,
+      "is_scraped": null,
+      "introduced_at": null,
+      "note": null,
+      "elos": [],
+      "pricing": {
+        "price_per_1k_images": null
+      }
+    }
+  ]
+}
